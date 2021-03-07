@@ -1,0 +1,169 @@
+.body {
+    font-size: 14px !important;
+}
+
+.mb-sm {
+    margin-bottom: 20px !important;
+}
+
+.mb-md {
+    margin-bottom: 40px !important;
+}
+
+.mb-lg {
+    margin-bottom: 60px !important;
+}
+
+body {
+    font-family: "Montserrat", "M PLUS 1p", sans-serif;
+    font-size: 14px;
+}
+
+.content-width {
+    width: 90%;
+    margin: 0 auto;
+    max-width: $maxWidth;
+}
+
+.content-padding{
+    padding: 60px 0;
+}
+
+.main-title {
+    @extend .mb-sm;
+    font-size: 24px;
+    text-align: center;
+}
+
+.sub-title{
+    padding:10px 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+.top {
+    &__inner {
+        height: 80vh;
+        background-color: $cTopBg;
+    }
+
+    &__content {
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    &__texts {
+        position: relative;
+        top: 50%;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 36px;
+        color: $cWhite;
+        transform: translateY(-50%);
+
+        & span {
+            display: block;
+        }
+    }
+
+    &__sub-title {
+        font-size: 0.6em;
+        letter-spacing: 2px;
+    }
+}
+
+.aboutme {
+    & span {
+        display: block;
+    }
+
+    &__inner {
+        @extend .content-width;
+        @extend .content-padding;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__img {
+        @extend .mb-sm;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        background-color: $cBgGray;
+        border-radius: 50%;
+    }
+
+    &__name {
+        @extend .mb-sm;
+        text-align: center;
+    }
+
+    &__table {
+        @extend .mb-sm;
+
+        & th,
+        & td {
+            padding: 0 20px 10px 0;
+        }
+    }
+}
+
+.works {
+
+    &__inner{
+        @extend .content-padding;
+    }
+    &__img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        background-color: $cBgGray;
+    }
+
+    & span {
+        display: block;
+        text-align: center;
+        padding: 10px 0 20px;
+    }
+}
+
+.skill{
+
+    background-color: $cContentBg;
+
+    & span{
+        display: block;
+    } 
+
+    &__inner{
+        @extend .content-width;
+        @extend .content-padding;
+    }
+
+    &__img{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: $cTopBg;
+        position: relative;
+        color: white;
+
+        & > i{
+            font-size: 3em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__item{
+        @extend .mb-md;
+    }
+}

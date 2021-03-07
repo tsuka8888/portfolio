@@ -1,0 +1,224 @@
+@charset "UTF-8";
+.body {
+  font-size: 14px !important;
+}
+
+.mb-sm, .main-title, .aboutme__img, .aboutme__name, .aboutme__table {
+  margin-bottom: 20px !important;
+}
+
+.mb-md, .skill__item {
+  margin-bottom: 40px !important;
+}
+
+.mb-lg {
+  margin-bottom: 60px !important;
+}
+
+body {
+  font-family: "Montserrat", "M PLUS 1p", sans-serif;
+  font-size: 14px;
+}
+
+.content-width, .aboutme__inner, .skill__inner {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1070px;
+}
+
+.content-padding, .aboutme__inner, .works__inner, .skill__inner {
+  padding: 60px 0;
+}
+
+.main-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.sub-title {
+  padding: 10px 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.top__inner {
+  height: 80vh;
+  background-color: #007786;
+}
+
+.top__content {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.top__texts {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 36px;
+  color: white;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.top__texts span {
+  display: block;
+}
+
+.top__sub-title {
+  font-size: 0.6em;
+  letter-spacing: 2px;
+}
+
+.aboutme span {
+  display: block;
+}
+
+.aboutme__title {
+  text-align: center;
+}
+
+.aboutme__img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-color: #adadad;
+  border-radius: 50%;
+}
+
+.aboutme__name {
+  text-align: center;
+}
+
+.aboutme__table th,
+.aboutme__table td {
+  padding: 0 20px 10px 0;
+}
+
+.works__img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  background-color: #adadad;
+}
+
+.works span {
+  display: block;
+  text-align: center;
+  padding: 10px 0 20px;
+}
+
+.skill {
+  background-color: #c7f9ff;
+}
+
+.skill span {
+  display: block;
+}
+
+.skill__img {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #007786;
+  position: relative;
+  color: white;
+}
+
+.skill__img > i {
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media (min-width: 480px) {
+  /******************************************************************
+
+Stylesheet: 480px以上(スマホの横向き)のモニタで適用
+
+******************************************************************/
+}
+
+@media (min-width: 600px) {
+  /******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+  .flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 960px) {
+  /******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+  .font-sm {
+    font-size: 16px;
+  }
+  .font-md {
+    font-size: 19px;
+  }
+  .font-lr {
+    font-size: 23px;
+  }
+  .font-lg {
+    font-size: 36px;
+  }
+  .mb-lg {
+    margin-bottom: 150px !important;
+  }
+  .pb-lg {
+    padding-bottom: 150px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  /******************************************************************
+
+Stylesheet: 1280px以上のモニタで適用
+
+******************************************************************/
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /******************************************************************
+
+Stylesheet: Retinaディスプレイで適用
+
+******************************************************************/
+  /* 
+
+EXAMPLE 
+.icon {
+	background: url(images/test@2x.png) no-repeat;
+	background-size: 24px 24px;
+}
+
+*/
+}
+
+@media print {
+  /******************************************************************
+
+Stylesheet: プリンタのみに適用
+
+******************************************************************/
+}
+/*# sourceMappingURL=style.css.map */
