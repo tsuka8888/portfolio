@@ -1,0 +1,86 @@
+@import "./variables";
+@import "./mixin";
+
+body {
+    font-family: "Kameron", "Noto Sans JP", sans-serif;
+    font-size: 14px;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+.font-sm {
+    font-size: 14px;
+}
+.font-md {
+    font-size: 17px;
+}
+.font-lr {
+    font-size: 17px;
+}
+.font-lg {
+    font-size: 25px;
+}
+.mb-sm {
+    margin-bottom: 16px !important;
+}
+.mb-md {
+    margin-bottom: 40px !important;
+}
+.mb-lg {
+    margin-bottom: 80px !important;
+}
+.pb-sm {
+    padding-bottom: 16px !important;
+}
+.pb-lg {
+    padding-bottom: 80px !important;
+}
+.content-width {
+    width: 90%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
+.content-padding {
+    padding: 60px 0;
+}
+.main-title {
+    @extend .mb-md;
+    font-size: 24px;
+    font-weight: 600;
+    color: $cMain;
+    text-align: center;
+}
+
+.sub-title {
+    padding: 10px 0;
+    font-size: 15px;
+    text-align: center;
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+
+@include display_tab {
+    .main-title {
+        font-size: 36px;
+    }
+    .flex {
+        flex-direction: row;
+    }
+}
+
+@include display_pc {
+    .main-title {
+        font-size: 48px;
+    }
+    .content-width-texts {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
