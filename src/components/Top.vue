@@ -48,7 +48,6 @@ export default {
     methods: {
         triggerInviewMainTitle(inview) {
             this.isInviewMainTitle = inview;
-            console.log(this.isInviewMainTitle);
         },
         animate(inview, el) {
             if (inview) {

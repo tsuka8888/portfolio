@@ -2,6 +2,7 @@
     <section class="aboutme">
         <div class="aboutme__inner">
             <h2
+                :v-show="isInviewMainTitle"
                 class="aboutme__title main-title"
                 :class="{ 'animate__animated animate__fadeIn': isInviewMainTitle }"
                 v-observe-visibility="{
@@ -15,15 +16,18 @@
             </h2>
             <div class="aboutme__container">
                 <div
+                    :v-if="isInviewImage"
                     class="aboutme__img"
                     v-observe-visibility="{
-                        callback: (inview) => {
-                            this.isInviewImage = inview;
+                        callback: debug,
+                        once: true,
+                        intersection: {
+                            rootMargin: '-250px',
                         },
                     }"
                 >
                     <div class="aboutme__img__img" :class="{ 'animate__animated animate__bounceIn': isInviewImage }">
-                        <img src="/aboutme_icon.png" alt="" />
+                        <img v-if="isInviewImage" src="/aboutme_icon.png" alt="" />
                     </div>
                     <span class="aboutme__img__name">山本 司</span>
                 </div>
@@ -34,6 +38,7 @@
                         callback: (inview) => {
                             this.isInviewDiv1 = inview;
                         },
+                        once: true,
                     }"
                 >
                     <p>
@@ -56,7 +61,12 @@ export default {
             isInviewDiv2: false,
         };
     },
-    methods: {},
+    methods: {
+        debug(inview) {
+            this.isInviewImage = inview;
+            console.log("inview", this.isInviewImage);
+        },
+    },
 };
 </script>
 

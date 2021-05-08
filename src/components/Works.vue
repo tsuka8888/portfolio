@@ -32,7 +32,7 @@
                             once: true,
                         }"
                     >
-                        <div class="works__img bg-img-zoom" :style="{ 'background-image': item.backgroundImagePath }"></div>
+                        <div class="works__img bg-img-zoom" :style="{ 'background-image': 'url(' + item.imagePath + ')' }"></div>
                     </div>
                     <span class="works__label">{{ item.name }}</span>
                 </div>
@@ -53,33 +53,25 @@ export default {
     data() {
         return {
             isInviewMainTitle: false,
-            // modalTitle: "",
-            // modalMessage: "",
-            // modalImage: "",
             items: [
                 {
                     isInview: false,
                     imagePath: "/ss1.png",
-                    backgroundImagePath: "url(/ss1.png)",
                     name: "ホテルの模擬サイト",
                     message:
                         "UdemyでHTML5、Sass、Javascript(ES6)を学んだ際の成果物です。Web開発を行っていた頃から1年半程経過しており、忘れていることも多かったため、復習も兼ねて学習しました。モダンなWebサイト製作を通して、基礎からカルーセルの実装などの応用まで学びました。",
                 },
                 {
                     isInview: false,
-                    imagePath: "/",
-                    backgroundImagePath: "#",
+                    imagePath: "/ss2.png",
                     name: "ポートフォリオサイト",
-                    message: "このサイトです。",
+                    message: "このWebページです。ホテルの模擬サイトを作成した際の技術に加えて、Vue.jsを使って作成しました。初めてのVue.jsを用いてのアウトプットだったので苦戦することが多かったですが、制作を通してVue.jsの理解を深めることができました。他にアウトプットを行った際は、このWebサイトに追記していきます。",
                 },
             ],
         };
     },
     methods: {
         showModal(index) {
-            // this.modalTitle = this.items[index].name;
-            // this.modalMessage = this.items[index].message;
-            // this.modalImage = this.items[index].imagePath;
             const modalInfo = {
                 title : this.items[index].name,
                 message : this.items[index].message,
@@ -87,12 +79,10 @@ export default {
             }
             this.$emit("toggle-modal-open", modalInfo);
         },
-        // toggleModalOpen(value) {
-        //     this.$emit("toggle-modal-open", value);
-        // },
     },
 };
 </script>
+
 <style lang="scss">
 .works {
     &__inner {

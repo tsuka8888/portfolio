@@ -9,10 +9,6 @@
                             <span v-scroll-to="item.class">{{ item.label }}</span>
                         </a>
                     </li>
-                    <!-- <li class="header__li"><a href=""></a> Top</li>
-                    <li class="header__li">About Me</li>
-                    <li class="header__li">Skill</li>
-                    <li class="header__li">Works</li> -->
                 </ul>
             </nav>
         </div>
@@ -112,8 +108,13 @@ export default {
 }
 
 @include display_pc {
-    .header__nav {
-        display: block;
+    .header {
+        &__background{
+            justify-content: center;
+        }
+        &__nav {
+            display: block;
+        }
     }
 }
 </style>

@@ -58,13 +58,12 @@ export default {
         };
     },
     watch: {
-        isRender(newValue, oldValue) {
-            console.log("isRenderが" + oldValue + "から" + newValue + "に変更されました");
-            this.renderChart(this.data, this.options);
+        isRender(newValue) {
+            // console.log("isRenderが" + oldValue + "から" + newValue + "に変更されました");
+            if (newValue) {
+                this.renderChart(this.data, this.options);
+            }
         },
-    },
-    mounted() {
-        console.log("mounted");
     },
 };
 </script>

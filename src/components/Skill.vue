@@ -2,12 +2,11 @@
     <section class="skill">
         <div class="skill__inner">
             <h2
+                :v-show="isInviewMainTitle"
                 class="skill__title main-title"
                 :class="{ 'animate__animated animate__fadeIn': isInviewMainTitle }"
                 v-observe-visibility="{
-                    callback: (inview) => {
-                        this.isInviewMainTitle = inview;
-                    },
+                    callback: testMethod,
                     once: true,
                 }"
             >
@@ -18,13 +17,18 @@
             </div>
             <div class="skill__div2">
                 <div
+                    :v-show="isInviewChart"
                     class="skill__div2__chart"
                     v-observe-visibility="{
-                        callback: methods1,
+                        callback: (inview) => {
+                            this.isInviewChart = inview;
+                        },
                         once: true,
                     }"
                 >
-                    <chart :isRender="isInviewChart"></chart>
+                    <transition name="fade">
+                        <chart :v-show="isInviewChart" :isRender="isInviewChart"></chart>
+                    </transition>
                 </div>
                 <div class="skill__div2__texts">
                     <p>
@@ -70,8 +74,11 @@ export default {
     methods: {
         methods1(inview) {
             this.isInviewChart = inview;
-            console.log("isInviewChart", this.isInviewChart);
         },
+        testMethod(inview){
+            console.log("my skill set inview", inview);
+            this.isInviewMainTitle = inview;
+        }
     },
 };
 </script>
@@ -143,6 +150,7 @@ export default {
             justify-content: space-around;
             &__chart {
                 flex-basis: 40%;
+                height: 400px;
             }
             &__texts {
                 flex-basis: 47%;
