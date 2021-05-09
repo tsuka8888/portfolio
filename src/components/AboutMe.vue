@@ -15,7 +15,7 @@
                     }"
                 >
                     <div class="aboutme__img__img" :class="{ 'animate__animated animate__bounceIn': isInviewImage }">
-                        <img v-if="isInviewImage" src="/aboutme_icon.png" alt="" />
+                        <img v-if="isInviewImage" src="aboutme_icon.png" alt="" />
                     </div>
                     <span class="aboutme__img__name">山本 司</span>
                 </div>
