@@ -1,17 +1,7 @@
 <template>
     <section class="skill">
         <div class="skill__inner">
-            <h2
-                :v-show="isInviewMainTitle"
-                class="skill__title main-title"
-                :class="{ 'animate__animated animate__fadeIn': isInviewMainTitle }"
-                v-observe-visibility="{
-                    callback: testMethod,
-                    once: true,
-                }"
-            >
-                My skill set
-            </h2>
+            <h2 class="skill__title main-title">My skill set</h2>
             <div class="skill__div1">
                 <p>これまでに身につけたスキルをご紹介します。約2年半、フロントエンドからバックエンドまでのフルスタック開発の業務経験があります。</p>
             </div>
@@ -26,9 +16,7 @@
                         once: true,
                     }"
                 >
-                    <transition name="fade">
-                        <chart :v-show="isInviewChart" :isRender="isInviewChart"></chart>
-                    </transition>
+                    <chart :v-show="isInviewChart" :isRender="isInviewChart"></chart>
                 </div>
                 <div class="skill__div2__texts">
                     <p>
@@ -75,10 +63,10 @@ export default {
         methods1(inview) {
             this.isInviewChart = inview;
         },
-        testMethod(inview){
+        testMethod(inview) {
             console.log("my skill set inview", inview);
             this.isInviewMainTitle = inview;
-        }
+        },
     },
 };
 </script>

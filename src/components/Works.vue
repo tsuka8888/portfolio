@@ -1,18 +1,7 @@
 <template>
     <section class="works">
         <div class="works__inner">
-            <h2
-                class="works__title main-title"
-                :class="{ 'animate__animated animate__fadeIn': isInviewMainTitle }"
-                v-observe-visibility="{
-                    callback: (inview) => {
-                        this.isInviewMainTitle = inview;
-                    },
-                    once: true,
-                }"
-            >
-                My outputs
-            </h2>
+            <h2 class="works__title main-title">My outputs</h2>
             <div class="works__texts">
                 <p>
                     これまでに作成した成果物をご紹介します。個人で学習を行い、アウトプットを行い始めてまだ2〜3ヶ月程度なのであまり多くありませんが、順次追加予定です。
@@ -42,13 +31,7 @@
 </template>
 
 <script>
-// import Modal from "./Modal.vue";
-
 export default {
-    // props: [modalInfo],
-    components: {
-        // Modal,
-    },
     props: ["isInviewModal"],
     data() {
         return {
@@ -60,12 +43,15 @@ export default {
                     name: "ホテルの模擬サイト",
                     message:
                         "UdemyでHTML5、Sass、Javascript(ES6)を学んだ際の成果物です。Web開発を行っていた頃から1年半程経過しており、忘れていることも多かったため、復習も兼ねて学習しました。モダンなWebサイト製作を通して、基礎からカルーセルの実装などの応用まで学びました。",
+                    githubUrl: "https://github.com/tsuka8888/frontend-dev",
                 },
                 {
                     isInview: false,
                     imagePath: "/ss2.png",
                     name: "ポートフォリオサイト",
-                    message: "このWebページです。ホテルの模擬サイトを作成した際の技術に加えて、Vue.jsを使って作成しました。初めてのVue.jsを用いてのアウトプットだったので苦戦することが多かったですが、制作を通してVue.jsの理解を深めることができました。他にアウトプットを行った際は、このWebサイトに追記していきます。",
+                    message:
+                        "このWebページです。ホテルの模擬サイトを作成した際の技術に加えて、Vue.jsを使って作成しました。初めてのVue.jsを用いてのアウトプットだったので苦戦することが多かったですが、制作を通してVue.jsの理解を深めることができました。他にアウトプットを行った際は、このWebサイトに追記していきます。",
+                    githubUrl: "https://github.com/tsuka8888/portfolio",
                 },
             ],
         };
@@ -73,10 +59,11 @@ export default {
     methods: {
         showModal(index) {
             const modalInfo = {
-                title : this.items[index].name,
-                message : this.items[index].message,
-                image : this.items[index].imagePath,
-            }
+                title: this.items[index].name,
+                message: this.items[index].message,
+                image: this.items[index].imagePath,
+                githubUrl: this.items[index].githubUrl,
+            };
             this.$emit("toggle-modal-open", modalInfo);
         },
     },

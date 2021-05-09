@@ -1,19 +1,7 @@
 <template>
     <section class="aboutme">
         <div class="aboutme__inner">
-            <h2
-                :v-show="isInviewMainTitle"
-                class="aboutme__title main-title"
-                :class="{ 'animate__animated animate__fadeIn': isInviewMainTitle }"
-                v-observe-visibility="{
-                    callback: (inview) => {
-                        this.isInviewMainTitle = inview;
-                    },
-                    once: true,
-                }"
-            >
-                About me
-            </h2>
+            <h2 class="aboutme__title main-title">About me</h2>
             <div class="aboutme__container">
                 <div
                     :v-if="isInviewImage"
@@ -22,7 +10,7 @@
                         callback: debug,
                         once: true,
                         intersection: {
-                            rootMargin: '-250px',
+                            rootMargin: '-200px 0px',
                         },
                     }"
                 >
@@ -31,16 +19,7 @@
                     </div>
                     <span class="aboutme__img__name">山本 司</span>
                 </div>
-                <div
-                    class="aboutme__texts"
-                    :class="{ 'animate__animated animate__fadeIn': isInviewDiv1 }"
-                    v-observe-visibility="{
-                        callback: (inview) => {
-                            this.isInviewDiv1 = inview;
-                        },
-                        once: true,
-                    }"
-                >
+                <div class="aboutme__texts">
                     <p>
                         滋賀県出身のシステムエンジニア。小さい頃からパソコンとゲームが大好きだったこともあり、ゲームプログラマーの専門学校へ飛び込む。その学校でWeb開発の授業を受けたのがWeb開発との最初の出会い。システム会社に入社後は、Web開発のエンジニアとしてサーバーサイドからフロントエンドまで業務を経験。現在はVB.Netの業務ソフトウェアの開発と保守など、様々なことに挑戦しています。
                     </p>

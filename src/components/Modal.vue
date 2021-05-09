@@ -1,13 +1,18 @@
 <template>
     <div class="work-modal">
         <div class="work-modal__overlay" @click="closeModal">
-            <div class="work-modal__window">
+            <div class="work-modal__window" @click.stop="">
                 <div class="work-modal__header">
                     <h4 class="work-modal__header__title">{{ title }}</h4>
                     <span class="work-modal__header__close" @click="closeModal">×</span>
                 </div>
                 <div class="work-modal__content">
                     <p class="work-modal__content__message">{{ message }}</p>
+                    <div class="work-modal__link">
+                        <a :href="githubUrl" target="_blank" rel="noopener noreferrer">
+                            <font-awesome-icon :icon="['fab', 'github']" /> Github
+                        </a>
+                    </div>
                     <div class="work-modal__content__img">
                         <img :src="image" alt="" />
                     </div>
@@ -19,7 +24,7 @@
 
 <script>
 export default {
-    props: ["isInviewModal", "title", "message", "image"],
+    props: ["isInviewModal", "title", "message", "image", "githubUrl"],
     methods: {
         closeModal() {
             this.$emit("set-inview-modal", false);
@@ -69,7 +74,7 @@ export default {
             top: 0;
             right: 15px;
             font-size: 35px;
-            transition: color .5s;
+            transition: color 0.5s;
 
             &:hover {
                 text-decoration: none;
@@ -77,6 +82,11 @@ export default {
             }
         }
     }
+    &__link {
+        text-align: center;
+        padding-bottom: 30px;
+    }
+
     &__content {
         @extend .content-width;
 

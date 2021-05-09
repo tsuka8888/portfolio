@@ -19,6 +19,7 @@
                         :title="modalInfo.title"
                         :message="modalInfo.message"
                         :image="modalInfo.image"
+                        :githubUrl="modalInfo.githubUrl"
                         :isInviewModal="isInviewModal"
                         @set-inview-modal="setInviewModal"
                     />
@@ -57,6 +58,7 @@ export default {
                 title: "",
                 message: "",
                 image: "",
+                githubUrl: "",
             },
         };
     },
@@ -74,6 +76,7 @@ export default {
             this.modalInfo.title = value.title;
             this.modalInfo.message = value.message;
             this.modalInfo.image = value.image;
+            this.modalInfo.githubUrl = value.githubUrl;
             this.isInviewModal = true;
         },
         closeMenu() {
