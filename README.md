@@ -1,24 +1,15 @@
-# vue12
+# ポートフォリオサイト
+私のポートフォリオサイトです。
+私のことを少しでも知ってもらいたいという思いから作成しました。
 
-## Project setup
-```
-npm install
-```
+## 使用技術
+HTML5
+CSS3
+SCSS
+Vue.js
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 苦労したポイント
+まずは環境構築に苦労しました。AppleSilicon M1のMacを使用しているのですが
+Node.jsやライブラリのバージョンによって使えるものと使えないものがあったりと
+予期せぬ箇所で時間を要しました。
+またデザインに関して、なるべくシンプルなデザインを心掛けました。
