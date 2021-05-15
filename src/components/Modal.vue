@@ -9,9 +9,7 @@
                 <div class="work-modal__content">
                     <p class="work-modal__content__message">{{ message }}</p>
                     <div class="work-modal__link">
-                        <a :href="githubUrl" target="_blank" rel="noopener noreferrer">
-                            <font-awesome-icon :icon="['fab', 'github']" /> Github
-                        </a>
+                        <a :href="githubUrl" target="_blank" rel="noopener noreferrer"> <font-awesome-icon :icon="['fab', 'github']" /> Github </a>
                     </div>
                     <div class="work-modal__content__img">
                         <img :src="image" alt="" />
@@ -41,6 +39,9 @@ export default {
     &__window {
         background-color: $cWhite;
         padding-bottom: 50px;
+        height: 90%;
+        width: 90%;
+        overflow-y: scroll;
     }
 
     &__overlay {
